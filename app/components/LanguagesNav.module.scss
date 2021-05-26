@@ -11,13 +11,13 @@
     }
 }
 
-.elemHighlighted {
-    background: yellow;
-    padding: 4px;
-}
-
 .button {
     padding: 8px 16px;
-    font-weight: 500;
+    font-weight: var(--font-weight-medium);
     border: 0;
+}
+
+.buttonHighlighted {
+    color: var(--color-white);
+    background: var(--color-tab-active);
 }
