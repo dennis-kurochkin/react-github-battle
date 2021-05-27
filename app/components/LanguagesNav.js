@@ -1,4 +1,5 @@
 import styles from './LanguagesNav.module.scss';
+import PropTypes from 'prop-types';
 
 const languages = ['All', 'JavaScript', 'Ruby', 'Java', 'CSS', 'Python'];
 
@@ -19,7 +20,12 @@ const LanguagesNav = ({ selected, onUpdateLanguage }) => {
         </li>
       ))}
     </ul>
-  )
+  );
 }
+
+LanguagesNav.propTypes = {
+  selected: PropTypes.oneOf(languages).isRequired,
+  onUpdateLanguage: PropTypes.func.isRequired,
+};
 
 export default LanguagesNav;
