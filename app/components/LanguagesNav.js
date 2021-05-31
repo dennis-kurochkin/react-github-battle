@@ -1,5 +1,5 @@
-import styles from './LanguagesNav.module.scss';
 import PropTypes from 'prop-types';
+import styles from './LanguagesNav.module.scss';
 
 const languages = ['All', 'JavaScript', 'Ruby', 'Java', 'CSS', 'Python'];
 
