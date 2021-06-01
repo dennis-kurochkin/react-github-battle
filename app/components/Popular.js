@@ -1,6 +1,7 @@
 import React from 'react';
 import { fetchPopularRepositories } from '../services';
 import LanguagesNav from './LanguagesNav';
+import RepositoriesGrid from './RepositoriesGrid';
 
 class Popular extends React.Component {
   constructor(props) {
@@ -54,9 +55,7 @@ class Popular extends React.Component {
           onUpdateLanguage={this.setSelectedLanguage}
         />
         {this.isLoading() && <h2 style={{ textAlign: 'center' }}>Loading...</h2>}
-        {repositories[selectedLanguage] && repositories[selectedLanguage].map(repository => {
-          return <h2 key={repository.id}>{repository.name}</h2>
-        })}
+        <RepositoriesGrid repositories={repositories[selectedLanguage] || []} />
       </>
     )
   }
