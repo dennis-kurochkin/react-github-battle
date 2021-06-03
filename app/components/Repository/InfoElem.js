@@ -10,7 +10,7 @@ const InfoElem = ({ icon, children, href }) => {
   );
 
   return (
-    <li className={!href && styles.infoElem}>
+    <li className={!href ? styles.infoElem : ''}>
       {href
         ? <a href={href} className={`${styles.infoElem} ${styles.infoLink}`} target="_blank">{infoElemText}</a>
         : infoElemText
