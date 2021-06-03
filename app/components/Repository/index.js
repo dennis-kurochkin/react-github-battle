@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { FaUser, FaStar, FaCar, FaCodeBranch } from 'react-icons/fa';
+import { FaUser, FaStar, FaCar, FaCodeBranch, FaExclamationTriangle } from 'react-icons/fa';
 import InfoElem from './InfoElem';
 import styles from './index.module.scss';
 
@@ -26,23 +26,23 @@ const Repository = ({ ownIndex, name, url, author, stars, forks, issues }) => {
         </h2>
         <ul className={styles.infoList}>
           <InfoElem
-            icon={<FaUser />}
+            icon={<FaUser color="var(--color-secondary)" />}
             href={authorUrl}
           >
             {authorName}
           </InfoElem>
           <InfoElem
-            icon={<FaStar />}
+            icon={<FaStar color="rgb(255, 215, 0)" />}
           >
             {stars.toLocaleString()} stars
           </InfoElem>
           <InfoElem
-            icon={<FaCodeBranch />}
+            icon={<FaCodeBranch color="rgb(129, 195, 245)" />}
           >
             {forks.toLocaleString()} forks
           </InfoElem>
           <InfoElem
-            icon={<FaCar />}
+            icon={<FaExclamationTriangle color="rgb(241, 138, 147)" />}
           >
             {issues.toLocaleString()} open issues
           </InfoElem>
