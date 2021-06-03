@@ -23,4 +23,10 @@ module.exports = {
       template: path.resolve(__dirname, 'app/index.html')
     }),
   ],
+  resolve: {
+    alias: {
+      components: path.resolve(__dirname, 'app/components'),
+      services: path.resolve(__dirname, 'app/services'),
+    }
+  }
 }
