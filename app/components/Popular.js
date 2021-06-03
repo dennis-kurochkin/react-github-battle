@@ -1,5 +1,5 @@
 import React from 'react';
-import { fetchPopularRepositories } from '../services';
+import { fetchPopularRepositories } from 'services';
 import LanguagesNav from './LanguagesNav';
 import RepositoriesGrid from './RepositoriesGrid';
 

@@ -3,7 +3,6 @@ import { FaUser, FaStar, FaCar, FaCodeBranch } from 'react-icons/fa';
 import InfoElem from './InfoElem';
 import styles from './index.module.scss';
 
-// TODO: add styles to the classes
 const Repository = ({ ownIndex, name, url, author, stars, forks, issues }) => {
   const { login: authorName, avatar_url: avatarUrl, html_url: authorUrl } = author
 
@@ -17,24 +16,38 @@ const Repository = ({ ownIndex, name, url, author, stars, forks, issues }) => {
           className={styles.avatarImage}
         />
       </div>
-      <h2 className={styles.title}>
-        <a
-          href={url}
-          className={styles.link}
-          target="_blank"
-        >{name}</a>
-      </h2>
-      <ul className={styles.info}>
-        <li className={styles.infoElem}> {/* TODO: extend and use InfoElem component */}
-          <a href={authorUrl} target="_blank">
-            <span className={styles.infoElemIcon}><FaUser /></span>
-            <span className={styles.infoElemText}>{authorName}</span>
-          </a>
-        </li>
-        <InfoElem icon={<FaStar />}>{stars.toLocaleString()} stars</InfoElem>
-        <InfoElem icon={<FaCodeBranch />}>{forks.toLocaleString()} forks</InfoElem>
-        <InfoElem icon={<FaCar />}>{issues.toLocaleString()} open issues</InfoElem>
-      </ul>
+      <div className={styles.body}>
+        <h2 className={styles.title}>
+          <a
+            href={url}
+            className={styles.link}
+            target="_blank"
+          >{name}</a>
+        </h2>
+        <ul className={styles.infoList}>
+          <InfoElem
+            icon={<FaUser />}
+            href={authorUrl}
+          >
+            {authorName}
+          </InfoElem>
+          <InfoElem
+            icon={<FaStar />}
+          >
+            {stars.toLocaleString()} stars
+          </InfoElem>
+          <InfoElem
+            icon={<FaCodeBranch />}
+          >
+            {forks.toLocaleString()} forks
+          </InfoElem>
+          <InfoElem
+            icon={<FaCar />}
+          >
+            {issues.toLocaleString()} open issues
+          </InfoElem>
+        </ul>
+      </div>
     </li>
   );
 }
